@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price's Refrigeration & Heating Service, Inc. | HVAC Services in Roanoke Rapids, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .preview-banner {
+            background-color: #ffcc00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 3px solid #e6b800;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: #1a472a;
+            color: white;
+            padding: 1rem 0;
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-phone {
+            font-size: 1.1rem;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .header-phone:hover {
+            color: #ffd700;
+        }
+
+        .cta-button-header {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button-header:hover {
+            background-color: #e55a2b;
+        }
+
+        @media (max-width: 768px) {
+            .header-contact {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .header-phone {
+                font-size: 1rem;
+            }
+
+            .cta-button-header {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 71, 42, 0.7), rgba(26, 71, 42, 0.7)), url('https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1a472a;
+            text-align: center;
+        }
+
+        .about {
+            background-color: #f9f9f9;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #1a472a;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 2rem;
+        }
+
+        .service-card-content h3 {
+            font-size: 1.5rem;
+            color: #1a472a;
+            margin-bottom: 1rem;
+        }
+
+        .service-card-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card-content a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .service-card-content a:hover {
+            color: #e55a2b;
+        }
+
+        .contact {
+            background-color: #f9f9f9;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #ff6b35;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text h3 {
+            font-size: 1.2rem;
+            color: #1a472a;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item-text p {
+            color: #555;
+        }
+
+        .contact-item-text a {
+            color: #1a472a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-item-text a:hover {
+            color: #ff6b35;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a472a;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: #e55a2b;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            background-color: #1a472a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+        ⚠️ PREVIEW MODE FOR Price's Refrigeration & Heating Service, Inc. — Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Price's Refrigeration & Heating</div>
+            <div class="header-contact">
+                <a href="tel:+1252-537-5321" class="header-phone">📞 +1 (252) 537-5321</a>
+                <a href="#contact" class="cta-button-header">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Expert HVAC Services for Your Home & Business</h1>
+        <p>Professional refrigeration and heating solutions in Roanoke Rapids, NC. Same-day service available!</p>
+        <a href="#contact" class="cta-button">Schedule Your Service Today</a>
+    </section>
+
+    <section class="section about">
+        <h2>About Price's Refrigeration & Heating</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Trusted Local HVAC Experts</h3>
+                <p>With years of experience serving the Roanoke Rapids community, Price's Refrigeration & Heating Service, Inc. is your go-to provider for all heating, cooling, and refrigeration needs.</p>
+                <p>We pride ourselves on delivering professional, reliable service with a commitment to customer satisfaction. Our certified technicians are equipped to handle any HVAC challenge, from routine maintenance to emergency repairs.</p>
+                <p>Whether you need air conditioning installation, furnace repair, or commercial refrigeration services, we're here to keep your systems running smoothly year-round.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1585844038893-fa36451b9de3?w=500&h=400&fit=crop" alt="HVAC Technician" class="about-image">
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Air Conditioning Installation" class="service-card-image">
+                <div class="service-card-content">
+                    <h3>Air Conditioning</h3>
+                    <p>Installation, maintenance, and repair of air conditioning systems to keep your home cool and comfortable all summer long.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="Heating Services" class="service-card-image">
+                <div class="service-card-content">
+                    <h3>Heating Systems</h3>
+                    <p>Expert furnace and heating system services including installation, repair, and regular maintenance for winter comfort.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1578881289849-b63b04e7f75b?w=400&h=300&fit=crop" alt="Refrigeration Services" class="service-card-image">
+                <div class="service-card-content">
+                    <h3>Commercial Refrigeration</h3>
+                    <p>Professional refrigeration solutions for businesses, including installation, maintenance, and emergency repair services.</p>
+                    <a href="#contact">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585844038893-fa36451b9de3?w=400&h=300&fit=crop" alt="HVAC Maintenance" class="service-card-image">
