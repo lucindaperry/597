@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jackson & Sons - HVAC Services in Dudley, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .preview-banner {
+            background-color: #ffcc00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 3px solid #e6b800;
+            font-size: 16px;
+        }
+
+        header {
+            background-color: #1a3a52;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 50px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b35;
+        }
+
+        .phone-header {
+            background-color: #ff6b35;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .phone-header:hover {
+            background-color: #e55a24;
+        }
+
+        main {
+            margin-top: 120px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            background-image: url('https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=1200&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(26, 58, 82, 0.75);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #e55a24;
+            transform: translateY(-2px);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+
+        .cta-button.secondary:hover {
+            background-color: white;
+            color: #1a3a52;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #1a3a52;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #1a3a52;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #ff6b35;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            color: #1a3a52;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .contact-details h4 {
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-details p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .contact-details a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #e55a24;
+        }
+
+        footer {
+            background-color: #0d1f2d;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        .social-links {
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #ff6b35;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            line-height: 40px;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #e55a24;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.mobile-open {
+                display: block;
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cta-button.secondary {
+                display: block;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            header {
+                top: 50px;
+            }
+
+            nav a {
+                display: block;
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .preview-banner {
+                font-size: 14px;
+                padding: 12px 8px;
+            }
+
+            header {
+                top: 45px;
+            }
+
+            main {
+                margin-top: 110px;
+            }
+
+            .hero {
+                padding: 60px 15px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+        ⚠️ PREVIEW MODE FOR Jackson & Sons — Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">J&S</div>
+                <span>Jackson & Sons</span>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:+1252-501-3579" class="phone-header">📞 Call Now</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Professional HVAC Services</h1>
+                <p>Heating, Cooling & Maintenance Solutions for Your Home</p>
+                <a href="tel:+1252-501-3579" class="cta-button">Call +1 252-501-3579</a>
+                <a href="#contact" class="cta-button secondary">Get a Free Quote</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <h2>About Jackson & Sons</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Trusted HVAC Experts in Dudley, NC</h3>
+                        <p>Jackson & Sons has been serving the Dudley community with top-quality HVAC services for years. Owner Malcolm Jackson leads our dedicated team with a commitment to excellence and customer satisfaction.</p>
+                        <p>We specialize in heating and cooling installations, maintenance, and repairs for residential properties. Our technicians are fully trained and equipped to handle any HVAC challenge.</p>
+                        <p>We pride ourselves on providing reliable, professional service at competitive rates. Whether you need emergency repairs or routine maintenance, Jackson & Sons is here to keep your home comfortable year-round.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&h=500&fit=crop" alt="Professional HVAC Service">
+                    </div>
+                </div>
+            </div>
+        </section>
