@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honeycutt & Jones Inc - AC Contractor in Nashville, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 102, 204, 0.85), rgba(0, 102, 204, 0.85)), url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a2b;
+        }
+
+        .cta-button-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .cta-button-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #006699;
+            color: white;
+            padding: 15px 20px;
+            position: sticky;
+            top: 70px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffcc00;
+        }
+
+        @media (max-width: 768px) {
+            header nav ul {
+                gap: 15px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            color: #006699;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #006699;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f5f5f5;
+            padding: 80px 20px;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            color: #006699;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: #006699;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            color: #006699;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            background-color: #006699;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 30px;
+            font-size: 1.5em;
+        }
+
+        .contact-info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-info-item strong {
+            min-width: 100px;
+        }
+
+        .contact-info a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background-color: #f5f5f5;
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #006699;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1em;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #e55a2b;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003d66;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+                min-height: 350px;
+                margin-top: 70px;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .about,
+            .services,
+            .contact {
+                padding: 50px 20px;
+            }
+
+            .about h2,
+            .services h2,
+            .contact h2 {
+                font-size: 1.5em;
+            }
+
+            header nav ul {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+ ⚠️ PREVIEW MODE FOR Honeycutt & Jones Inc | Secure ownership at 597websites.com to launch on your custom domain.
+</div>
+
+<header>
+    <nav>
+        <div class="logo">Honeycutt & Jones Inc</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Expert Air Conditioning Services</h1>
+        <p>Professional AC Installation, Repair & Maintenance in Nashville, NC</p>
+        <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+        <a href="tel:+19197554677" class="cta-button cta-button-secondary">Call Now: (919) 755-4677</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Honeycutt & Jones Inc</h2>
+    <div class="about-content">
+        <div class="about-text">
+            <h3>Your Local AC Experts</h3>
+            <p>Since serving Nashville and the surrounding areas, Honeycutt & Jones Inc has been the trusted choice for all air conditioning needs. Our experienced technicians are committed to providing reliable, professional service that keeps your home comfortable year-round.</p>
+            <p>We specialize in AC installation, repair, maintenance, and emergency services. Whether you need a new system installed or your existing unit serviced, we have the expertise and dedication to get the job done right.</p>
+            <p>With a focus on customer satisfaction and competitive pricing, we're proud to be Nashville's preferred air conditioning contractor.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="AC Technician" class="about-image">
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="services-container">
+        <h2>Our AC Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>AC Installation</h3>
+                <p>Professional installation of new air conditioning systems designed for optimal efficiency and performance in your home or business.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>AC Repair</h3>
+                <p>Fast and reliable repair services for all AC brands and models. We diagnose and fix issues quickly to restore your comfort.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛠️</div>
+                <h3>Maintenance Plans</h3>
+                <p>Regular maintenance keeps your system running smoothly, improves efficiency, and extends the life of your equipment.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3>Emergency Service</h3>
+                <p>AC problems don't wait. Our emergency services are available to get your system back up and running when you need us most.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>System Replacement</h3>
+                <p>If your AC is beyond repair, we provide expert replacement services with quality equipment and professional installation.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💨</div>
+                <h3>Ductwork Services</h3>
+                <p>From inspection and cleaning to repair and installation, we ensure your ductwork is functioning efficiently.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us Today</h2>
+    <div class="contact-content">
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <div class="contact-info-item">
+                <strong>Phone:</strong>
+                <div><a href="tel:+19197554677">(919) 755-4677</a></div>
+            </div>
+            <div class="contact-info-item">
+                <strong>Email:</strong>
+                <div><a href="mailto:matt.acman@yahoo.com">matt.acman@yahoo.com</a></div>
+            </div>
+            <div class="contact-info-item">
+                <strong>Location:</strong>
+                <div>6730 NC-58<br>Nashville, NC 27856</div>
+            </div>
+            <div class="contact-info-item">
+                <strong
