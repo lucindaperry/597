@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patton Mechanical, Inc. - HVAC Services in Halifax, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .banner {
+            background-color: #ffcc00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 3px solid #e6b800;
+            font-size: 16px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 47px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .header-contact {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .header-contact a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        .header-contact a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 58, 95, 0.7), rgba(30, 58, 95, 0.7)), url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.9rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #1e3a5f;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #ff6b35;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a8c 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: #ff6b35;
+            flex-shrink: 0;
+        }
+
+        .contact-item p {
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.9rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-submit:hover {
+            background-color: #e55a2b;
+        }
+
+        footer {
+            background-color: #0f1f33;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .header-contact {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .banner {
+                font-size: 14px;
+            }
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .social-link:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+ ⚠️ PREVIEW MODE FOR Patton Mechanical, Inc. — Secure ownership at 597websites.com to launch on your custom domain.
+</div>
+
+<header>
+    <div class="header-container">
+        <div class="logo">Patton Mechanical, Inc.</div>
+        <div class="header-contact">
+            <a href="tel:+1252-583-0004">📞 +1 (252) 583-0004</a>
+            <a href="https://www.facebook.com/876467285744340" target="_blank">👍 Facebook</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>Expert HVAC Services in Halifax, NC</h1>
+    <p>Professional heating, cooling, and air quality solutions for your home and business</p>
+    <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+</section>
+
+<section class="about">
+    <div class="section">
+        <h2>About Patton Mechanical, Inc.</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Local HVAC Experts</h3>
+                <p>With years of experience serving the Halifax community, Patton Mechanical, Inc. has built a reputation for reliable, professional HVAC services. We're committed to keeping your home comfortable year-round.</p>
+                <p>Our team of certified technicians specializes in installation, maintenance, and repair of heating and cooling systems. We pride ourselves on prompt service, transparent pricing, and customer satisfaction.</p>
+                <p>Located at 16150 NC-561, Halifax, NC 27839, we're your trusted neighborhood HVAC contractor.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="HVAC Technician">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services">
+    <div class="section">
+        <h2>Our Services</h2>
+        <p class="section-subtitle">Comprehensive HVAC solutions for residential and commercial properties</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">❄️</div>
+                <h3>Air Conditioning</h3>
+                <p>Installation, repair, and maintenance of cooling systems. Keep your home cool and comfortable during hot summers.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔥</div>
+                <h3>Heating Systems</h3>
+                <p>Professional heating solutions including furnace installation, repair, and regular maintenance for winter comfort.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Maintenance Plans</h3>
+                <p>Preventative maintenance programs to keep your HVAC system running efficiently and extend its lifespan.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌬️</div>
+                <h3>Air Quality</h3>
+                <p>Indoor air quality solutions including filtration systems and ventilation upgrades for healthier homes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Emergency Repairs</h3>
+                <p>24/7 emergency HVAC repair services. We're here when you need us most, day or night.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>System Inspections</h3>
+                <p>Comprehensive HVAC inspections to identify issues before they become major problems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="section">
+        <h2>Contact Us Today</h2>
+        <p class="section-subtitle">Ready to improve your comfort? Get in touch with our team</p>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.3rem;">Phone</h4>
+                        <p><a href="tel:+1252-583-0004" style="color: white; text-decoration: none;">+1 (252) 583-0004</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4 style="margin-bottom: 0.3rem;">Location</h4>
+                        <p>16150 NC-561<br>Halifax, NC 27839</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div
