@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions Heating & Cooling - HVAC Services in Halifax, VA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 65px;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            background-color: #f97316;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ea580c;
+        }
+
+        .cta-button-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 14px 35px;
+            margin-left: 15px;
+            font-size: 16px;
+        }
+
+        .cta-button-secondary:hover {
+            background-color: white;
+            color: #1e3a8a;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #1e3a8a;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-content img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text h2 {
+            font-size: 28px;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f97316;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-button-secondary {
+                margin-left: 0;
+                display: block;
+                margin-top: 15px;
+            }
+        }
+
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .service-card a {
+            color: #f97316;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .service-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info-box h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-item-icon {
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text {
+            flex-grow: 1;
+        }
+
+        .contact-item-text a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item-text a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        .contact-form h3 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
+        }
+
+        .form-submit {
+            background-color: #f97316;
+            color: white;
+            padding: 14px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #ea580c;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        footer {
+            background-color: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #f97316;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f97316;
+            border-radius: 50%;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #ea580c;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+        ⚠️ PREVIEW MODE FOR Solutions Heating & Cooling — Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                🔧 Solutions Heating & Cooling
+            </div>
+            <div class="contact-info">
+                <a href="tel:+14344044461">📞 +1 434-404-4461</a>
+                <a href="http://www.facebook.com/heatandacsolutions" target="_blank">📘 Follow Us</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Expert HVAC Services for Halifax, VA</h1>
+        <p>Professional heating and cooling solutions for your home or business. Fast, reliable, and affordable.</p>
+        <div>
+            <a href="#contact" class="cta-button">Get a Free Quote Today</a>
+            <a href="#services" class="cta-button cta-button-secondary">View Our Services</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="HVAC Technician">
+            <div class="about-text">
+                <h2>About Solutions Heating & Cooling</h2>
+                <p>With years of experience serving Halifax and the surrounding communities, Solutions Heating & Cooling is your trusted partner for all your HVAC needs. Our team of licensed and certified technicians is dedicated to providing top-quality service with a personal touch.</p>
+                <p>We believe in building long-term relationships with our customers by delivering honest, reliable service at competitive prices. Whether you need emergency repairs, routine maintenance, or a complete system installation, we're here to help.</p>
+                <ul class="features-list">
+                    <li>Licensed & Insured Technicians</li>
+                    <li>Emergency 24/7 Service Available</li>
+                    <li>Free In-Home Estimates</li>
+                    <li>Satisfaction Guaranteed</li>
+                    <li>Competitive Pricing</li>
+                    <li>Fast Response Times</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585930866745-8d62ad2ce3eb?w=400&h=200&fit=crop" alt="Air Conditioning Service">
+                <div class="service-card-content">
+                    <h3>Air Conditioning Service</h3>
