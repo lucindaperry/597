@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jackson & Sons - Professional HVAC Services in Dudley, NC. Expert heating, cooling, and air conditioning solutions.">
+    <title>Jackson & Sons - HVAC Contractor in Dudley, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .watermark-banner {
+            background-color: #ffcc00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 3px solid #e6b800;
+            font-size: 16px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 68px;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s;
+        }
+
+        .contact-info a:hover {
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a2b;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=500&fit=crop') center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .hero .cta-button {
+            background-color: #ff6b35;
+            padding: 15px 40px;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #1e3a8a;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 24px;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 25px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .contact {
+            background-color: #1e3a8a;
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .contact-item p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .contact-item a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 14px;
+            background-color: #ff6b35;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #e55a2b;
+        }
+
+        footer {
+            background-color: #0f1f3a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #ff6b35;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark-banner">
+        ⚠️ PREVIEW MODE FOR Jackson & Sons — Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Jackson & Sons</div>
+            <div class="contact-info">
+                <a href="tel:+1252-501-3579">📞 +1 (252) 501-3579</a>
+                <a href="mailto:klow@innospecinc.com">✉️ Email Us</a>
+                <a href="https://www.facebook.com/JacksonandSons" target="_blank">Facebook</a>
+                <a href="tel:+1252-501-3579" class="cta-button">Call Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional HVAC Services in Dudley, NC</h1>
+            <p>Expert heating and cooling solutions for your home or business. Fast, reliable, and affordable service you can trust.</p>
+            <a href="tel:+1252-501-3579" class="cta-button">Get Your Free Estimate Today</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-title">About Jackson & Sons</div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Local HVAC Experts</h3>
+                <p>Jackson & Sons has been serving the Dudley, North Carolina community with top-quality HVAC services for years. Our team of certified technicians is dedicated to keeping your home comfortable year-round.</p>
+                <p>Whether you need AC repair, heating installation, maintenance services, or emergency support, we're here to help. We take pride in our honest workmanship and customer-first approach.</p>
+                <p>Family-owned and operated, we understand what it takes to build lasting relationships with our customers. We're committed to providing exceptional service at competitive prices.</p>
+                <div class="features">
+                    <div class="feature-item">
+                        <h4>🎯 Expert Service</h4>
+                        <p>Certified technicians with years of experience</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>⚡ Fast Response</h4>
+                        <p>Emergency repairs available 24/7</p>
+                    </div>
+                    <div class="feature-item">
+                        <h4>💰 Fair Pricing</h4>
+                        <p>Transparent quotes with no hidden fees</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="HVAC Technician at work">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="section-title">Our HVAC Services</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-card-image">
+                    <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=200&fit=crop" alt="Air Conditioning Repair">
+                </div>
+                <div class="service-card-content">
+                    <h3>AC Repair & Maintenance</h3>
+                    <p>Keep your air conditioning running smoothly. We handle repairs, seasonal maintenance, and emergency cooling needs to ensure your comfort during hot months.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image">
+                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=200&fit=crop" alt="Heating Installation">
+                </div>
+                <div class="service-card-content">
+                    <h3>Heating System Services</h3>
+                    <p>Professional heating installation, repair, and maintenance. We ensure your home stays warm and efficient throughout the winter season.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-card-image">
+                    <img src="https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=400&h=200&fit=crop" alt="HVAC Installation">
+                </div>
+                <div class="service-card-content">
+                    <h3>System Installation</h3>
+                    <p>Expert installation of new HVAC systems. We help you choose the right equipment for your home and ensure professional installation for optimal performance
