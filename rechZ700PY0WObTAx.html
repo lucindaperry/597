@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Comfort HVAC Services | Heating & Cooling in Bethel, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .preview-banner {
+            background-color: #ffcc00;
+            color: #000000;
+            text-align: center;
+            padding: 15px 10px;
+            font-weight: bold;
+            font-family: sans-serif;
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            border-bottom: 3px solid #e6b800;
+            font-size: 16px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 58, 82, 0.7), rgba(45, 90, 123, 0.7)), url('https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #1a3a52;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+            border-radius: 2px;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a3a52;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: #1a3a52;
+        }
+
+        .service-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        #about {
+            background-color: #f9f9f9;
+        }
+
+        #services {
+            background-color: white;
+        }
+
+        #contact {
+            background-color: #1a3a52;
+            color: white;
+        }
+
+        #contact .section-title {
+            color: white;
+        }
+
+        #contact .section-title::after {
+            background: #ff6b35;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .contact-method {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-method h3 {
+            margin-bottom: 10px;
+            color: #ff6b35;
+        }
+
+        .contact-method p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .contact-method a {
+            color: #ffb84d;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #0f2438;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .preview-banner {
+                font-size: 14px;
+                padding: 10px 5px;
+            }
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+        ⚠️ PREVIEW MODE FOR Southern Comfort HVAC Services — Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Southern Comfort HVAC</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <a href="tel:+12523755702">+1 252-375-5702</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Bethel, NC</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Expert HVAC Services in Bethel, NC</h1>
+        <p>Professional heating and cooling solutions for your home and business. Fast, reliable, and affordable service you can trust.</p>
+        <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Southern Comfort HVAC</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=500&h=400&fit=crop" alt="HVAC Technician at work">
+            </div>
+            <div class="about-content">
+                <h2>Your Local HVAC Experts</h2>
+                <p>Southern Comfort HVAC Services has been serving the Bethel, North Carolina community with top-quality heating and cooling solutions for years. We pride ourselves on delivering exceptional service with integrity and professionalism.</p>
+                <p>Our team of certified technicians is dedicated to ensuring your home or business stays comfortable year-round, no matter what the weather brings.</p>
+                <ul class="feature-list">
+                    <li>Licensed and certified technicians</li>
+                    <li>24/7 emergency service available</li>
+                    <li>Fast response times</li>
+                    <li>Transparent pricing with no hidden fees</li>
+                    <li>Warranty on all work performed</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="AC Installation">
+                <div class="service-content">
+                    <h3>AC Installation</h3>
+                    <p>Professional air conditioning installation with energy-efficient units that keep your home cool and comfortable while reducing energy costs.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1584622181173-34de9f73597d?w=400&h=300&fit=crop" alt="Heating Systems">
+                <div class="service-content">
+                    <h3>Heating Systems</h3>
+                    <p>Reliable heating installation and repair services to keep your home warm during cold winter months. We service all major brands.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585999646945-2c3e30c38a25?w=400&h=300&fit=crop" alt="HVAC Maintenance">
+                <div class="service-content">
+                    <h3>HVAC Maintenance</h3>
+                    <p>Regular maintenance plans to keep your system running efficiently, prevent costly repairs, and extend equipment lifespan.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092916537-5ffc9c9f38cd?w=400&h=300&fit=crop" alt="AC Repair">
+                <div class="service-content">
+                    <h3>AC Repair</h3>
+                    <p>Quick and efficient air conditioning repair
