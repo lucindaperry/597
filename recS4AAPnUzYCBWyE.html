@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taylor's HVAC - Professional Heating & Cooling Services in Tarboro, NC</title>
+    <meta name="description" content="Taylor's HVAC provides expert heating, cooling, and air conditioning services in Tarboro, North Carolina. Call (252) 801-4548 for fast, reliable HVAC repair and maintenance.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a5490 0%, #2874a6 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 60px;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffcc00;
+        }
+
+        .phone-btn {
+            background-color: #ff6b35;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            background-color: #e55a24;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 84, 144, 0.7), rgba(40, 116, 166, 0.7)), url('https://images.unsplash.com/photo-1581092162562-40038f56c232?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background-color: #e55a24;
+            transform: translateY(-2px);
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #1a5490;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            color: #1a5490;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card-content {
+            padding: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: #1a5490;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact {
+            background-color: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-info-section h3 {
+            color: #1a5490;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item-label {
+            font-weight: bold;
+            color: #1a5490;
+            min-width: 100px;
+        }
+
+        .contact-item-value {
+            color: #555;
+        }
+
+        .contact-item a {
+            color: #ff6b35;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1a5490;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #1a5490;
+            box-shadow: 0 0 5px rgba(26, 84, 144, 0.3);
+        }
+
+        .form-submit {
+            background-color: #ff6b35;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background-color: #e55a24;
+        }
+
+        footer {
+            background-color: #1a5490;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 4rem 1rem;
+                min-height: 350px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+        ⚠️ PREVIEW MODE FOR Taylor's HVAC - Secure ownership at 597websites.com to launch on your custom domain.
+    </div>
+
+    <header>
+        <div class="header-content">
+            <div class="logo">Taylor's HVAC</div>
+            <div class="contact-info">
+                <a href="https://www.facebook.com/TaylorsHvacNHomeRepair/" target="_blank">Facebook</a>
+                <a href="tel:+12528014548" class="phone-btn">📞 (252) 801-4548</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Professional HVAC Services for Tarboro, NC</h1>
+        <p>Expert Heating, Cooling & Air Conditioning Solutions You Can Trust</p>
+        <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Taylor's HVAC</h2>
+                <p>With years of experience serving the Tarboro community, Taylor's HVAC is your trusted partner for all heating and cooling needs. We pride ourselves on delivering exceptional service with honest pricing and professional workmanship.</p>
+                <p>Whether you need emergency AC repair during summer heat or furnace maintenance before winter, our skilled technicians are ready to help. We're committed to keeping your home comfortable year-round.</p>
+                <p>From routine maintenance to complete system replacements, we handle it all with care and expertise. Your satisfaction is our top priority.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1585420016271-5b80046ba50d?w=500&h=400&fit=crop" alt="Professional HVAC Technician" class="about-image">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092161562-40038f56c232?w=400&h=300&fit=crop" alt="AC Repair Service">
+                <div class="service-card-content">
+                    <h3>AC Repair & Maintenance</h3>
+                    <p>Keep your air conditioning running smoothly with our professional repair and maintenance services. We handle everything from minor fixes to major repairs.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" alt="Heating System Service">
+                <div class="service-card-content">
+                    <h3>Heating System Services</h3>
+                    <p>Stay warm through winter with our comprehensive heating services. We install, repair, and maintain furnaces and heating systems for maximum efficiency.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585425098519-c21deee89b13?w=400&h=300&fit=crop" alt="System Installation">
+                <div class="service-card-content">
+                    <h3>System Installation</h3>
+                    <p>Looking for a new HVAC system? We provide professional installation of high-quality units tailored to your home's specific needs and budget.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585774113226-f3c4baf45b12?w=400&h=300&fit=crop" alt="Emergency Service">
+                <div class="service-card-content">
+                    <h3>Emergency Services</h3>
+                    <p>HVAC problems don't wait for business hours. We offer emergency repair services to get your system back up and running quickly.</p>
+                </div>
+            </div>
