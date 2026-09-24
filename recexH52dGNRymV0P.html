@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airboss Heating & Cooling, Inc | HVAC Services in Littleton, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 60px;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(26, 58, 82, 0.7), rgba(44, 90, 160, 0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1200&h=600&fit=crop') center/cover;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about {
+            background-color: #f8f9fa;
+        }
+
+        .about h2,
+        .services h2,
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a3a52;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #1a3a52 0%, #2c5aa0 100%);
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .contact-item-icon {
+            font-size: 1.8rem;
+            min-width: 40px;
+        }
+
+        .contact-item-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-item-text p {
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .contact-item a {
+            color: #ffc107;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+        }
+
+        footer {
+            background-color: #0f1f2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .about h2,
+            .services h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+ ⚠️ PREVIEW MODE FOR Airboss Heating & Cooling, Inc - Secure ownership at 597websites.com to launch on your custom domain.
+</div>
+
+    <header>
+        <nav>
+            <div class="logo">Airboss HVAC</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Expert HVAC Services in Littleton, NC</h1>
+        <p>Reliable Heating & Cooling Solutions for Your Home and Business</p>
+        <a href="#contact" class="cta-button">Get a Free Estimate Today</a>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Airboss Heating & Cooling</h2>
+                <h3>Your Trusted Local HVAC Experts</h3>
+                <p>With years of experience serving the Littleton, NC community, Airboss Heating & Cooling, Inc is your premier choice for all heating and cooling needs. We pride ourselves on delivering exceptional service, professional expertise, and customer satisfaction.</p>
+                <p>Our certified technicians are equipped to handle any HVAC challenge, from routine maintenance to complex system installations. We use only the highest quality parts and the latest technology to ensure your comfort year-round.</p>
+                <p>Whether you need emergency repairs on a cold winter night or a new system installation, Airboss is here for you 24/7. Your satisfaction is our guarantee.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1585320818830-2c6f5c0d70b1?w=500&h=400&fit=crop" alt="Professional HVAC Technician">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=300&fit=crop" alt="Air Conditioning Service">
+                <h3>Air Conditioning</h3>
+                <p>From AC repairs to full system replacements, we keep your home cool and comfortable all summer long with professional, efficient service.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1581092162562-40038f9fc91b?w=400&h=300&fit=crop" alt="Heating Service">
+                <h3>Heating Systems</h3>
+                <p>Reliable heating solutions including furnace repair, replacement, and maintenance to keep your home warm during winter months.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585320818830-2c6f5c0d70b1?w=400&h=300&fit=crop" alt="Maintenance Plans">
+                <h3>Maintenance Plans</h3>
+                <p>Preventive maintenance keeps your HVAC system running efficiently year-round, reducing energy costs and extending system life.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=300&fit=crop" alt="Emergency Repairs">
+                <h3>Emergency Repairs</h3>
+                <p>24/7 emergency HVAC repair service. When your system fails, we're here to restore comfort to your home quickly.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1578926078328-123d41471b1f?w=400&h=300&fit=crop" alt="System Installation">
+                <h3>New System Installation</h3>
+                <p>Expert installation of high-efficiency heating and cooling systems designed to maximize comfort and minimize energy consumption.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=300&fit=crop" alt="Indoor Air Quality">
+                <h3>Indoor Air Quality</h3>
+                <p>Improve your home's air quality with our filtration and purification systems for a healthier living environment.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>
