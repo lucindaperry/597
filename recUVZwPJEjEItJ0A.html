@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucinda Perry - Test Services in Enfield, NC</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Sections */
+        section {
+            padding: 2.5rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #667eea;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Services Section */
+        #services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .service-card {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f8f9fa;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info h3 {
+            margin-top: 0;
+        }
+
+        .contact-detail {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-detail strong {
+            min-width: 100px;
+            color: #667eea;
+        }
+
+        .contact-detail a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-image {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Typography */
+        @media (max-width: 480px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div style="background-color: #ffcc00; color: #000000; text-align: center; padding: 15px 10px; font-weight: bold; font-family: sans-serif; position: sticky; top: 0; z-index: 99999; border-bottom: 3px solid #e6b800; font-size: 16px;">
+⚠️ PREVIEW MODE FOR Lucinda Perry — Secure ownership at 597websites.com to launch on your custom domain.
+</div>
+
+<header>
+    <h1>Lucinda Perry</h1>
+    <p>Professional Test Services • Enfield, NC</p>
+</header>
+
+<section class="hero">
+    <h2>Expert Test Services in Enfield, NC</h2>
+    <p>Reliable, professional service you can trust. Contact us today for a consultation.</p>
+    <a href="tel:919-903-3103" class="cta-button">📞 Call Now: 919-903-3103</a>
+</section>
+
+<section id="about">
+    <h2>About Lucinda Perry</h2>
+    <div class="about-content">
+        <div>
+            <p>Lucinda Perry is committed to delivering outstanding test services to the Enfield, NC community. With a focus on quality and customer satisfaction, we provide reliable solutions tailored to meet your specific needs.</p>
+            <p>Our dedication to excellence ensures that every project is handled with professionalism and attention to detail.</p>
+        </div>
+        <div class="about-image" style="background-color: #e0e0e0;">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop" alt="Lucinda Perry - Professional Services">
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Comprehensive Testing</h3>
+            <p>We provide thorough testing services to ensure quality and reliability across all aspects of your project.</p>
+        </div>
+        <div class="service-card">
+            <h3>Professional Assessment</h3>
+            <p>Our expert assessments deliver detailed insights and actionable recommendations for your specific needs.</p>
+        </div>
+        <div class="service-card">
+            <h3>Quality Assurance</h3>
+            <p>We implement rigorous quality assurance protocols to guarantee outstanding results every time.</p>
+        </div>
+        <div class="service-card">
+            <h3>Consultation Services</h3>
+            <p>Get expert guidance and strategic consultation to help you achieve your goals efficiently.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <div class="contact-detail">
+                <strong>Phone:</strong>
+                <a href="tel:919-903-3103">919-903-3103</a>
+            </div>
+            <div class="contact-detail">
+                <strong>Location:</strong>
+                <span>Enfield, NC</span>
+            </div>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem;">Ready to get started? Give us a call today to discuss your test service needs. We're here to help!</p>
+        </div>
+        <div class="contact-image" style="background-color: #e0e0e0;">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop" alt="Contact Lucinda Perry">
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Lucinda Perry. All rights reserved.</p>
+    <p>Professional Test Services • Enfield, NC</p>
+</footer>
+
+</body>
+</html>
